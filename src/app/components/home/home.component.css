@@ -1,0 +1,15 @@
+.card-img-top{
+  height: 200px;
+  width: 200px;
+}
+.col-4{
+  border: 1px solid rgb(138, 129, 129);
+  border-radius:5%;
+  margin: 1px;
+}
+.fas.fa-heart{
+  color: #ccc;
+  font-size: 30px;
+  margin: 30px;
+}
+

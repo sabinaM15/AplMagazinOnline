@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row" >
+        <div class="col-6 p-3">
+            <div class="form-group p-2">
+                <label for="inputName" class="col-lg-3 control-label"><b>Name Of Product:</b></label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputName" placeholder="Name" [(ngModel)] ="selectedProduct.name" name="name">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <label for="inputName" class="col-lg-3 control-label"><b>Price:</b></label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Price" [(ngModel)] ="selectedProduct.price" name="price">
+                </div>
+            </div>
+            <div class="form-group p-2"><b>Available At: </b>
+                <div class="p-3" *ngFor="let address of selectedAddress"><b>Location {{address.id + 1}}:</b> 
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Code" [(ngModel)] ="address.code" name="code">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Street" [(ngModel)] ="address.street" name="street">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Number" [(ngModel)] ="address.num" name="num">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="City" [(ngModel)] ="address.city" name="city">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Address</button>
+                <!-- <div *ngIf="flag"> -->
+                    <section class="container border mb-4 p-3" *ngFor="let address of newAddresses; let i = index;">
+                        <div class="row">
+                          <div class="col-6">
+                              <h4>Address {{i + 1}}</h4>
+                          </div>
+                          <div class="col-6 text-right">
+                              <!-- <button type="button" class="btn btn-danger btn-sm" (click)="removeAddress(i)">Remove</button> -->
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Code</label>
+                                <input type="text" class="form-control" [(ngModel)]="address.code" name="street_{{address.code}}"/>
+                                </div>
+                          </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Street</label>
+                                <input type="text" class="form-control" [(ngModel)]="address.street" name="street_{{address.id}}"/>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Number</label>
+                                <input type="text" class="form-control" [(ngModel)]="address.num" name="street_{{address.num}}"/>
+                            </div>
+                          </div>
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" [(ngModel)]="address.city" name="city_{{address.id}}"/>
+                            </div>
+                        </div>
+                        </section>
+                <!-- </div> -->
+            </div>
+
+            <div class="form-group p-2">
+                <label for="inputName" class="col-lg-3 control-label"><b>Stock:</b></label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Stock" [(ngModel)] ="selectedProduct.stock" name="stock">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <label for="inputName" class="col-lg-3 control-label"><b>Description:</b></label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Description" [(ngModel)] ="selectedProduct.description" name="description">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <label for="inputName" class="col-lg-3 control-label"><b>Rating:</b></label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Rating" [(ngModel)] ="selectedProduct.rating" name="rating">
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-light" (click)="saveChanges()" routerLink="/home">Save</button>
+            </div>
+            
+        </div>
+        <div class="col-6 p-2">
+            <img [src]="selectedProduct.img" class="rounded mx-auto d-block"/>
+        </div>
+    </div>
+  </div>
